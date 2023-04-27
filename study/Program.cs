@@ -6,7 +6,21 @@ namespace study
     {
         public static void Main()
         {
-            Console.WriteLine("Hello World!");
+            var service = new DataRepository("Data.txt");
+
+            service.Save("Dima");
+            service.Save("Andrey");
+
+            //get data
+
+            var names = service.ReadDataFromFile();
+
+            //foreach print data
+
+            foreach(var name in names)
+            {
+                Console.WriteLine(name);
+            }
             Console.ReadKey();
         }
     }
